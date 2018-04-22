@@ -1,0 +1,10 @@
+version: "3"
+services:
+  executor:
+    build: .
+    environment:
+      - "NODE_ENV=dev"
+      - "CHROME_HEADLESS=true"
+
+
+
