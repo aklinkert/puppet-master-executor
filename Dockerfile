@@ -1,12 +1,17 @@
 FROM node:9.11.1-alpine
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    CHROMIUM_EXECUTABLE=/usr/bin/chromium-browser
 
-RUN apk add --no-cache \
-    udev \
-    ttf-freefont \
-    chromium
+RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
+    apk add --no-cache \
+      chromium@edge \
+      nss@edge \
+      udev \
+      ttf-freefont
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    CHROMIUM_EXECUTABLE=/usr/bin/chromium-browser \
+    CHROMIUM_HEADLESS=true
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
@@ -14,4 +19,4 @@ RUN npm install
 
 COPY . .
 
-ENTRYPOINT [ "node", "--experimental-modules", "lib/index.mjs" ]
+CMD [ "node", "--experimental-modules", "lib/index.mjs" ]
