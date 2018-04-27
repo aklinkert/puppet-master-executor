@@ -1,13 +1,14 @@
 version: "3"
 services:
   executor:
+    image: registry.gitlab.com/scalifyme/like/executor
     build: .
+    networks:
+      - like
     environment:
       - "NODE_ENV=dev"
       - "CHROME_HEADLESS=true"
 
-
 networks:
-  default:
-    external:
-      name: like
+  like:
+    external: true
