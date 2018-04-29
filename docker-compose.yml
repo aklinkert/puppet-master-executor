@@ -9,6 +9,12 @@ services:
       - "NODE_ENV=dev"
       - "CHROME_HEADLESS=true"
 
+      - "AWS_SQS_REGION="
+      - "AWS_SECRET_ACCESS_KEY="
+      - "AWS_ACCESS_KEY_ID="
+      - "AWS_SQS_QUEUE_URL="
+      - "AWS_SQS_VISIBILITY_TIMEOUT="
+
 networks:
   like:
     external: true
