@@ -1,18 +1,18 @@
-version: "3"
+version: '3.5'
 services:
   executor:
     image: registry.gitlab.com/scalifyme/like/executor
     build: .
     networks:
-      - like
+      - puppet_master
     environment:
       - "NODE_ENV=dev"
       - "CHROME_HEADLESS=true"
-      - "AWS_SQS_REGION=elasticmq"
-      - "AWS_SECRET_ACCESS_KEY=x"
-      - "AWS_ACCESS_KEY_ID=x"
-      - "AWS_SQS_QUEUE_URL=http://queue:9324/queue/germany"
-      - "AWS_SQS_VISIBILITY_TIMEOUT=300"
+      - "QUEUE_HOST=queue"
+      - "QUEUE_PORT=5672"
+      - "QUEUE_USERNAME=puppet"
+      - "QUEUE_PASSWORD=puppet"
 networks:
-  like:
+  puppet_master:
     external: true
+    name: puppet_master

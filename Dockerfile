@@ -19,4 +19,4 @@ RUN npm install
 
 COPY . .
 
-CMD [ "node", "--experimental-modules", "lib/index.mjs" ]
+CMD ["node", "--experimental-vm-modules", "--experimental-modules", "lib/index.mjs"]
