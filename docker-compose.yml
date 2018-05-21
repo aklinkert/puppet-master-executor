@@ -12,6 +12,8 @@ services:
       - "QUEUE_PORT=5672"
       - "QUEUE_USERNAME=puppet"
       - "QUEUE_PASSWORD=puppet"
+    volumes:
+      - "./data:/data"
 networks:
   puppet_master:
     external: true
