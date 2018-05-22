@@ -7,7 +7,7 @@
     "amqplib": "^0.5.2",
     "color-logs": "^0.6.1",
     "puppeteer": "^1.4.0",
-    "request": "^2.86.0",
+    "request": "^2.87.0",
     "vm2": "^3.6.0"
   }
 }
