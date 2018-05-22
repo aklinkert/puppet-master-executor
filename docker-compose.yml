@@ -12,6 +12,7 @@ services:
       - "QUEUE_PORT=5672"
       - "QUEUE_USERNAME=puppet"
       - "QUEUE_PASSWORD=puppet"
+      - "CHROMIUM_EXTRA_ARGS="
     volumes:
       - "./data:/data"
 networks:
