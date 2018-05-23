@@ -7,8 +7,6 @@ services:
       - puppet_master
     environment:
       - "NODE_ENV=dev"
-      - "CHROMIUM_HEADLESS=true"
-      - "CHROMIUM_EXTRA_ARGS=[\"--proxy-server=socks5://vpn:8080\",\"--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE myproxy\",\"--ignore-certificate-errors\"]"
       - "QUEUE_HOST=queue"
       - "QUEUE_PORT=5672"
       - "QUEUE_USERNAME=puppet"
