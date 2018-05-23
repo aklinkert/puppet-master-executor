@@ -7,12 +7,12 @@ services:
       - puppet_master
     environment:
       - "NODE_ENV=dev"
-      - "CHROME_HEADLESS=true"
+      - "CHROMIUM_HEADLESS=true"
+      - "CHROMIUM_EXTRA_ARGS="
       - "QUEUE_HOST=queue"
       - "QUEUE_PORT=5672"
       - "QUEUE_USERNAME=puppet"
       - "QUEUE_PASSWORD=puppet"
-      - "CHROMIUM_EXTRA_ARGS="
     volumes:
       - "./data:/data"
 networks:
