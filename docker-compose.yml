@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   executor:
-    image: registry.gitlab.com/scalifyme/like/executor
+    image: registry.gitlab.com/scalifyme/puppet-master/executor
     build: .
     networks:
       - puppet_master
