@@ -3,7 +3,7 @@
 repositories: []
 
 releases:
-  - name: executor-{{ $env }}
+  - name: puppet-master-executor-{{ $env }}
     chart: ./chart
     namespace: puppet-master-{{ $env }}
     set:
