@@ -1,0 +1,24 @@
+fullnameOverride: executor
+
+replicaCount: 4
+
+image:
+  repository: registry.gitlab.com/scalifyme/puppet-master/executor
+  tag: latest
+  pullPolicy: Always
+
+resources:
+   limits:
+    cpu: 1
+    memory: 1Gi
+   requests:
+    cpu: 500m
+    memory: 256Mi
+
+nodeSelector:
+  beta.kubernetes.io/arch: amd64
+  scalify.me/role: "worker"
+
+tolerations: []
+
+affinity: {}
