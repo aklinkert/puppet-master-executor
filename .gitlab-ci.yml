@@ -26,7 +26,7 @@ stages:
     - export APP_NAME=$(basename $CI_PROJECT_NAMESPACE)
     - export RELEASE_NAME=$APP_NAME-$CI_ENVIRONMENT_SLUG
     - export NAMESPACE=$APP_NAME-$CI_ENVIRONMENT_SLUG
-    - echo "Installing release $RELEASE_NAME to cluster=$kube_context environment=$CI_ENVIRONMENT_SLUG namespace=$NAMESPACE (deploys=$DEPLOYS)"
+    - echo "Installing commit $CI_COMMIT_SHA of release $RELEASE_NAME to cluster=$kube_context environment=$CI_ENVIRONMENT_SLUG namespace=$NAMESPACE"
 
     - helmfile sync
   environment:
@@ -42,6 +42,8 @@ build-docker-image-master:
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
+    - docker tag "$CI_REGISTRY_IMAGE" "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
   only:
     - master
 
