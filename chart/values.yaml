@@ -1,6 +1,6 @@
 fullnameOverride: executor
 
-replicaCount: 4
+replicaCount: 5
 
 image:
   repository: registry.gitlab.com/scalifyme/puppet-master/executor
