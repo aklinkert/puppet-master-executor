@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10.8.0-alpine
 
 # Installs latest Chromium (64) package.
 RUN apk update && apk upgrade && \
