@@ -31,10 +31,14 @@ jobs:
               fi
             fi
 
-
 workflows:
   version: 2
   build:
     jobs:
       - build:
           context: docker
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
