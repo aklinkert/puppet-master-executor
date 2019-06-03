@@ -1,12 +1,13 @@
 {
   "name": "puppet-master-executor",
   "version": "1.0.0",
-  "main": "lib/index.mjs",
+  "main": "lib/index.js",
   "license": "Apache-2.0",
   "private": true,
   "dependencies": {
-    "amqplib": "^0.5.2",
+    "amqplib": "^0.5.3",
     "color-logs": "^0.6.1",
     "puppeteer-core": "~1.7.0"
-  }
+  },
+  "type": "module"
 }

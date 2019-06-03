@@ -1,4 +1,4 @@
-FROM node:10.8.0-slim
+FROM node:12-slim
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
@@ -39,4 +39,4 @@ COPY . .
 
 USER pptruser
 
-CMD ["node", "--experimental-vm-modules", "--experimental-modules", "lib/index.mjs"]
+CMD ["node", "--experimental-vm-modules", "--experimental-modules", "lib/index.js"]
