@@ -5,9 +5,9 @@
   "license": "Apache-2.0",
   "private": true,
   "dependencies": {
-    "amqplib": "^0.5.3",
+    "amqplib": "^0.5.5",
     "color-logs": "^0.6.1",
-    "puppeteer-core": "^1.17.0"
+    "puppeteer-core": "^1.20.0"
   },
   "scripts": {
     "start": "node --experimental-vm-modules --experimental-modules lib/index.js"
